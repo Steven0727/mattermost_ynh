@@ -7,7 +7,6 @@
 #=================================================
 
 source _common.sh
-source Mattermost_LDAP.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
@@ -216,6 +215,11 @@ if [ $is_public -eq 1 ]
 then
   ynh_permission_update --permission="main" --add="visitors"
 fi
+
+#=================================================
+# Mattermost LDAP
+#=================================================
+source Mattermost_LDAP.sh
 
 #=================================================
 # RELOAD NGINX
